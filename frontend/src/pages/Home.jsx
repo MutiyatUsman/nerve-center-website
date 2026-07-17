@@ -58,6 +58,7 @@ export default function Home() {
           </motion.div>
 
           <div className="mt-16">
+            <h1 className="sr-only">Pioneering Neurovascular Engineering — NERVE Center at NC A&amp;T</h1>
             <MaskedLines
               className="font-serif font-light text-[13vw] md:text-[9vw] leading-[0.95] tracking-tighter"
               lines={["Pioneering", <span key="2"><em className="not-italic text-aggie-gold">Neurovascular</em></span>, "Engineering."]}
