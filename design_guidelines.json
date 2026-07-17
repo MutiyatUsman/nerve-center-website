@@ -1,0 +1,153 @@
+{
+  "project_name": "NERVE Center Website",
+  "identity": "Center for Neurovascular Engineering Research and adVanced Education (NERVE)",
+  "institution": "North Carolina A&T State University",
+  "app_type": "hybrid_fullstack",
+  "global_theme": {
+    "strategy": "hybrid",
+    "description": "Editorial academic layout combining a sophisticated off-white/cream base (for high legibility and federal/institutional trust) with deep navy anchor sections for contrast and rhythm. It uses subtle gold accents purely for editorial numbering and highlights. Awwwards-level polish via typography, whitespace, and motion, avoiding generic startup themes.",
+    "forbidden_colors": ["#1B93A4", "#7351B7"],
+    "forbidden_fonts": ["Space Grotesk", "Roboto", "Lato"]
+  },
+  "colors": {
+    "primary": {
+      "aggie_blue": "#004684",
+      "aggie_gold": "#FDB927",
+      "ncat_navy": "#002147",
+      "deep_void": "#001224"
+    },
+    "neutrals": {
+      "editorial_cream": "#F9F8F6",
+      "paper_white": "#FFFFFF",
+      "ink_black": "#0A0A0A",
+      "stone_gray": "#E5E5E5",
+      "text_main": "#1A1A1A",
+      "text_muted": "#666666"
+    },
+    "accents": {
+      "blood_red": "#8A1538"
+    },
+    "usage_rules": "Aggie Blue is the dominant brand anchor. Aggie Gold must be used SPARINGLY—only for editorial marks (e.g., '01', '02' chapter numbers), active states, and micro-interactions. The background defaults to 'editorial_cream' for reading sections and 'ncat_navy' or 'deep_void' for immersive/hero/footer sections."
+  },
+  "typography": {
+    "strategy": "The 'Old Money Tech' (SaaS / Fintech / Research) archetype.",
+    "headings": {
+      "font_family": "Fraunces, 'Playfair Display', serif",
+      "weights": ["300", "400", "600"],
+      "usage": "Use light/regular weights for massive, elegant headlines. Tight letter spacing (tracking-tighter) for massive text. H1s should scale fluidly up to text-6xl or text-7xl in hero sections."
+    },
+    "body": {
+      "font_family": "'Inter Tight', 'General Sans', sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Clean geometric sans for readability. Use leading-relaxed for long-form research text."
+    },
+    "mono": {
+      "font_family": "'IBM Plex Mono', monospace",
+      "weights": ["400"],
+      "usage": "Use for overlines, DOI links, publication dates, and data points. Tiny + Wide Spacing (tracking-[0.2em]) uppercase."
+    }
+  },
+  "logo_and_motifs": {
+    "logo_concept": "A minimalist, side-profile brain outline rendered in clean SVG linework (Aggie Blue or White depending on background). The internal structure should feature a subtle, organic vascular/branching/tree pattern, symbolizing neurovascular engineering.",
+    "background_motif": "Take a segment of the brain's vascular branching pattern and use it as a massive, subtle SVG watermark/underlay (opacity 5%) in the background of key sections (e.g., Manifesto, Contact)."
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing Philosophy. Use 2-3x more spacing than standard designs. p-12, p-24, p-32 to create breathing room.",
+    "grid_system": "Use The 'Bento' Grid Protocol or Swiss Grid layout. Strong vertical columns. A 12-column grid where text may only occupy 6 columns, leaving the rest for negative space or high-impact clipped photography."
+  },
+  "motion_and_interactions": {
+    "libraries_required": ["framer-motion", "lenis"],
+    "hero_reveal": "Signature on-load moment: Kinetic hero with a masked, line-by-line reveal of the main headline (using Framer Motion `clipPath` or `y: 100%` overflow-hidden reveals).",
+    "scroll_effects": "Use Lenis for smooth momentum scrolling. Section scroll-reveals must be subtle (opacity and y-axis shift). Parallax on the hero background image or the brain motif.",
+    "micro_interactions": "Hover states on research cards should feature a slow zoom on the background image (scale-105) and a slight shift of an arrow icon. Gold underline expansions for inline text links."
+  },
+  "section_by_section_layout": {
+    "header": {
+      "type": "Sticky top nav",
+      "style": "Glassmorphism (backdrop-blur-xl, bg-white/80 or bg-ncat_navy/80 depending on scroll position) with a 1px delicate bottom border.",
+      "elements": "Logo left. Nav links center: About, Research (Dropdown), Education, People, Publications, News, Facilities. CTA 'Contact' right."
+    },
+    "hero": {
+      "background": "Deep NCAT Navy (#002147). Subtle moving 3D particle effect or slow-panning high-res lab image masked with bg-ncat_navy/70 overlay.",
+      "content": "Massive Fraunces headline: 'Pioneering Neurovascular Engineering.' Masked line-by-line reveal. Minimal mono-spaced overline 'NIH-FUNDED RESEARCH CENTER'.",
+      "motif": "Oversized, cropped brain/vascular SVG drawing rotating incredibly slowly in the background."
+    },
+    "marquee": {
+      "style": "The 'Editorial Ribbon' (Subtle/Organic).",
+      "content": "NEUROVASCULAR · ORGANOIDS · MICROFLUIDICS · MACHINE LEARNING · TRANSLATIONAL · IPSC · BRAIN-ON-CHIP",
+      "typography": "font-mono, text-sm, tracking-widest, uppercase. Background: Aggie Blue, Text: Editorial Cream."
+    },
+    "manifesto_chapters": {
+      "layout": "Numbered editorial chapters for Mission/Vision.",
+      "design": "Two-column staggered layout. Left column: Massive Gold number (e.g., '01', font-serif text-8xl). Right column: H3 heading and descriptive body text. Real photography in clipped, purposeful frames (aspect-square or aspect-portrait, not standard 16:9).",
+      "background": "Editorial Cream."
+    },
+    "research_pillars": {
+      "layout": "Grid of 4 vertical cards (col-span-1 md:col-span-2).",
+      "cards": "Subtle border, no shadow (Technical Grid look). Hover lifts the card and changes border to Aggie Blue.",
+      "content": "1. Mini-Brain/Organoid. 2. Drug Delivery & Tissue Construct. 3. Advanced Imaging & ML. 4. Neurotechnology.",
+      "imagery": "Use spotlight/vignette imagery inside the cards."
+    },
+    "people_grid": {
+      "layout": "Director Bio (Dr. Yeoheung Yun) spans full width as a featured editorial block. Followed by a dense bento grid for other members.",
+      "style": "Black & white or duotone blue portraits that reveal full color on hover."
+    },
+    "publications": {
+      "layout": "List-based, highly structured. Academic rigor over flash.",
+      "elements": "Filter by Year/Topic. Clean rows with Title, Authors, Journal, and a prominent 'DOI' button (mono font)."
+    },
+    "partnerships": {
+      "layout": "Logo strip, grayscale with low opacity (40%). On hover, opacity 100%. Logos: NIH, NCAT, Univ of Pittsburgh, WashU."
+    },
+    "footer": {
+      "background": "Deep Void (#001224)",
+      "content": "Massive 'NERVE Center' text. Quick links. Critical: NIH funding acknowledgment statement in muted text."
+    }
+  },
+  "admin_panel": {
+    "access": "JWT-protected login route (/admin/login).",
+    "layout": "Functional/utilitarian. High-density grid (Mode B). Left sidebar nav, right content area.",
+    "tech": "Shadcn UI tables, forms, and dialogs. Cloudinary widget for image uploads.",
+    "features": "CRUD for Members, Publications, News."
+  },
+  "images": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/8442027/pexels-photo-8442027.jpeg",
+      "description": "Close-up of advanced laboratory machinery"
+    },
+    "research_organoid": {
+      "url": "https://images.unsplash.com/photo-1679639539537-0d2e452890f7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHxuZXVyb3NjaWVuY2UlMjByZXNlYXJjaHxlbnwwfHx8fDE3ODM1NzIwNTZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Close up of human brain structure"
+    },
+    "research_imaging": {
+      "url": "https://images.unsplash.com/photo-1518152006812-edab29b069ac",
+      "description": "White microscope"
+    },
+    "research_tissue": {
+      "url": "https://images.unsplash.com/photo-1647083701183-6f66d6b48174",
+      "description": "Close up view of blue substance/tissue"
+    },
+    "students": {
+      "url": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwYW5kJTIwZW5naW5lZXJpbmclMjBzdHVkZW50c3xlbnwwfHx8fDE3ODI2NDg4Nzd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Medical engineering students in lab"
+    },
+    "motif_reference": {
+      "url": "https://images.unsplash.com/photo-1711409645921-ef3db0501f96?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxuZXVyb3NjaWVuY2UlMjByZXNlYXJjaHxlbnwwfHx8fDE3ODM1NzIwNTZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Brain on black background for wireframe reference"
+    }
+  },
+  "universal_guidelines_for_main_agent": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid the 'AI slop' aesthetic. Make it highly editorial, like a New York Times interactive feature mixed with a national laboratory.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container. Do not add `.App { text-align: center; }`. Keep text left-aligned.",
+    "Every interaction needs micro-animations - hover states, transitions, entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "All interactive and key informational elements MUST include a `data-testid` attribute (e.g., data-testid='contact-submit-button').",
+    "Use `sonner` for toasts in the admin panel.",
+    "Never use placeholder URLs (via.placeholder.com). Use the provided Cloudinary/Unsplash/Pexels image URLs.",
+    "Admin panel should use Shadcn UI components heavily. The public facing site should use raw Tailwind + Framer Motion for layouts and customized Shadcn only for complex interactions (dropdowns/forms)."
+  ]
+}
