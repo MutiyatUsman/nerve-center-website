@@ -1,55 +1,66 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation, Outlet } from "react-router-dom";
+import { Toaster } from "sonner";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { AuthProvider } from "./lib/auth";
+import SmoothScroll from "./components/SmoothScroll";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Research from "./pages/Research";
+import Education from "./pages/Education";
+import People from "./pages/People";
+import Publications from "./pages/Publications";
+import Partnerships from "./pages/Partnerships";
+import News from "./pages/News";
+import Facilities from "./pages/Facilities";
+import Contact from "./pages/Contact";
+import AdminLogin from "./pages/AdminLogin";
+import AdminApp from "./pages/AdminApp";
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
 };
+
+const PublicLayout = () => (
+  <>
+    <Nav />
+    <Outlet />
+    <Footer />
+  </>
+);
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <ScrollToTop />
+        <Toaster position="bottom-right" richColors />
+        <SmoothScroll>
+          <Routes>
+            <Route element={<PublicLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/people" element={<People />} />
+              <Route path="/publications" element={<Publications />} />
+              <Route path="/partnerships" element={<Partnerships />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/facilities" element={<Facilities />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/*" element={<AdminApp />} />
+          </Routes>
+        </SmoothScroll>
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 
