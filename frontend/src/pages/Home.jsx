@@ -5,8 +5,9 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { MaskedLines, FadeIn, Overline, Chapter, SectionEyebrow } from "../components/Reveal";
 import Marquee from "../components/Marquee";
 import { NerveLogo } from "../components/NerveLogo";
+import BUILDING_IMG from "../Building.png";
 
-const HERO_IMG = "https://images.pexels.com/photos/8442027/pexels-photo-8442027.jpeg";
+const HERO_IMG = BUILDING_IMG;
 const ORGANOID = "https://images.unsplash.com/photo-1679639539537-0d2e452890f7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHxuZXVyb3NjaWVuY2UlMjByZXNlYXJjaHxlbnwwfHx8fDE3ODM1NzIwNTZ8MA&ixlib=rb-4.1.0&q=85";
 const IMAGING = "https://images.unsplash.com/photo-1518152006812-edab29b069ac";
 const TISSUE = "https://images.unsplash.com/photo-1647083701183-6f66d6b48174";
